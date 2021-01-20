@@ -12,6 +12,10 @@
 		BC4BB92925B6BC2900BDFC67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC4BB92825B6BC2900BDFC67 /* Assets.xcassets */; };
 		BC4BB92C25B6BC2900BDFC67 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC4BB92B25B6BC2900BDFC67 /* Preview Assets.xcassets */; };
 		BC4BB93525B6D0F800BDFC67 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4BB93425B6D0F800BDFC67 /* GameScene.swift */; };
+		BCE8994F25B7B95C00685A12 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE8994E25B7B95C00685A12 /* Result.swift */; };
+		BCE8995225B7BC2100685A12 /* AdaptiveStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE8995125B7BC2100685A12 /* AdaptiveStack.swift */; };
+		BCE8995525B7FF3700685A12 /* GridStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE8995425B7FF3700685A12 /* GridStack.swift */; };
+		BCE8995825B804C100685A12 /* SampleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE8995725B804C100685A12 /* SampleRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		BC4BB92B25B6BC2900BDFC67 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BC4BB92D25B6BC2900BDFC67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC4BB93425B6D0F800BDFC67 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		BCE8994E25B7B95C00685A12 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		BCE8995125B7BC2100685A12 /* AdaptiveStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveStack.swift; sourceTree = "<group>"; };
+		BCE8995425B7FF3700685A12 /* GridStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStack.swift; sourceTree = "<group>"; };
+		BCE8995725B804C100685A12 /* SampleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,10 @@
 				BC4BB92D25B6BC2900BDFC67 /* Info.plist */,
 				BC4BB92A25B6BC2900BDFC67 /* Preview Content */,
 				BC4BB93425B6D0F800BDFC67 /* GameScene.swift */,
+				BCE8994E25B7B95C00685A12 /* Result.swift */,
+				BCE8995125B7BC2100685A12 /* AdaptiveStack.swift */,
+				BCE8995425B7FF3700685A12 /* GridStack.swift */,
+				BCE8995725B804C100685A12 /* SampleRow.swift */,
 			);
 			path = SwiftUIControl;
 			sourceTree = "<group>";
@@ -141,8 +153,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCE8995225B7BC2100685A12 /* AdaptiveStack.swift in Sources */,
 				BC4BB93525B6D0F800BDFC67 /* GameScene.swift in Sources */,
+				BCE8995525B7FF3700685A12 /* GridStack.swift in Sources */,
 				BC4BB92725B6BC2200BDFC67 /* ContentView.swift in Sources */,
+				BCE8994F25B7B95C00685A12 /* Result.swift in Sources */,
+				BCE8995825B804C100685A12 /* SampleRow.swift in Sources */,
 				BC4BB92525B6BC2200BDFC67 /* SwiftUIControlApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
