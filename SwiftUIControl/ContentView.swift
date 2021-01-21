@@ -81,6 +81,56 @@ struct ContentView: View {
     
     @State private var name1: String = "Tim"
     
+    @State private var tipAmount = ""
+    
+    @State private var password: String = ""
+    
+    @State private var celsius: Double = 0
+    
+    var colors1 = ["Red","Green","Blue","Tartan"]
+    
+    @State private var selectedColor = 0
+    
+    
+    // 时间日期显示
+    
+    var dateFormatter:DateFormatter{
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        return formatter
+    }
+    
+    @State private var birthDate = Date()
+    
+    @State private var favoriteColor = 0
+    
+    // 如何创建步进器并从中读取值
+    
+    @State private var age = 18
+    
+    // 如何向视图添加手势识别器
+    
+    @State private var scale: CGFloat = 1.0
+    
+    @State private var selectedNumber = 0
+    
+    // 如何检测将鼠标悬停在视图上
+    
+    @State private var overText = false
+    
+    // 如何使用TextEditor创建多行可编辑文本
+    
+    @State private var profileText:String = "Enter your bio"
+    
+    // 如何让用户使用ColorPicker选择颜色
+    
+    @State private var bgColor = Color.white
+    
+    // 如何使用ProgressView显示任务的进度
+    
+    @State private var downloadAmount = 0.0
+    
+    let timer1 = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     
     var body: some View {
 //        Text("This is an extremely long text string that will never fit even the widest of Phones")
@@ -674,12 +724,302 @@ struct ContentView: View {
         
         // 如何将占位符添加到TextField
         
-        TextField("johnnyappleseed@apple.com", text:$name1)
+        /*
+         TextField("johnnyappleseed@apple.com", text:$name1)
             .textFieldStyle(RoundedBorderTextFieldStyle())
             .padding()
+        */
         
+        // 如何在TextField中禁用自动更正
+        
+        /*TextField("Enter your name", text:$name).disableAutocorrection(true)
+        */
+        
+        // 如何关闭TextField的键盘
+        /*VStack{
+            TextField("Name:", text:$tipAmount)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .keyboardType(.decimalPad)
+            
+            Button("Submit"){
+                print("Tip: \(self.tipAmount)")
+                self.hideKeyboard()
+            }
+        }*/
+        
+        // 如何使用SecureField创建安全的文本字段 创建密码
+        
+        /*
+         VStack{
+            SecureField("Enter a password", text:$password)
+            Text("You entered: \(password)")
+        }
+         */
+        
+        // 如何创建滑块并从中读取值 滑块
+        
+        /*
+        VStack{
+            Slider(value: $celsius, in:-100...100,step:0.1)
+            Text("\(celsius) Celsius is \(celsius*9/5+32) Fahrenheit")
+        }
+        */
+        
+        // 如何创建选择器并从中读取值
+        
+        /*VStack{
+            Picker(selection:$selectedColor, label:Text("Please choose a color")){
+                ForEach(0 ..< colors1.count){
+                    Text(self.colors1[$0])
+                }
+            }
+            
+            Text("You selected: \(colors1[selectedColor])")
+        }*/
+        
+        // 如何创建日期选择器并从中读取值
+        /*
+        VStack{
+            DatePicker(selection:$birthDate, in: ...Date(), displayedComponents: .date){
+                Text("Select a date")
+            }
+            
+            Text("Date is \(birthDate, formatter: dateFormatter)")
+        }
+        */
+        
+        /*
+        VStack{
+            Text("Enter your birthday")
+                .font(.largeTitle)
+            DatePicker("Enter your birthday", selection:$birthDate)
+                .datePickerStyle(GraphicalDatePickerStyle())
+                .frame(maxHeight:400)
+        }
+        */
+        
+        // 如何创建分段控件并从中读取值
+        
+        /*VStack{
+            Picker(selection:$favoriteColor, label:Text("What is you favorite color?")){
+                Text("Red").tag(0)
+                Text("Green").tag(1)
+                Text("Blue").tag(2)
+            }
+        }.pickerStyle(SegmentedPickerStyle())
+        
+        Text("Value: \(favoriteColor)")
+        */
+        
+        // 默认是forEach循环的
+        /*
+        VStack{
+            Picker(selection:$favoriteColor, label:Text("What is your favorite color?")){
+                ForEach(0..<colors1.count){ index in
+                    Text(self.colors1[index]).tag(index)
+                }
+            }.pickerStyle(SegmentedPickerStyle())
+            
+            Text("value: \(colors1[favoriteColor])")
+        }
+        */
+        
+        // 如何创建步进器并从中读取值 -/+选择器
+        /*
+        VStack{
+            Stepper("Enter your age", value:$age, in:0...130)
+            Text("Your age is \(age)")
+            
+        }
+        */
+        
+        /*
+        VStack{
+            Stepper("Enter your age", onIncrement:{
+                self.age += 1
+                print("Adding to age")
+            },onDecrement:{
+                self.age -= 1
+                print("Subtracting from age")
+            })
+            
+            Text("Your age is \(age)")
+        }
+        */
+        
+        // 添加手势 来点击
+        
+        /*VStack{
+        
+            Text("Tap me!")
+                .onTapGesture{
+                    print("Tapped!")
+                }
+            // 可以设置点击按钮2次
+            Image(systemName: "pencil")
+                .onTapGesture(count: 2){
+                    print("Double tapped!")
+                }
+        }*/
+        
+        // 如何使用contentShape（）控制视图的可点击区域
+        /*
+        VStack{
+            Image(systemName: "pencil").resizable()
+                .frame(width: 50, height: 50)
+            Spacer().frame(height:50)
+            Text("USS Enterprise")
+        }
+        .contentShape(Rectangle())
+        .onTapGesture{
+            print("Show details for Enterprise")
+        }
+        */
+        
+        
+        // 如何向视图添加手势识别器
+        /*VStack{
+            Image(systemName: "pencil")
+                .scaleEffect(scale)
+                .gesture(
+                    TapGesture()
+                        .onEnded{ _ in
+                            self.scale += 0.1
+                        }
+                )
+            Text("我变大了 \(scale,specifier: "%0.1f") 倍")
+            
+            Spacer().frame(height:50)
+            
+            // 长按按钮2秒 显示
+            Image(systemName: "pencil")
+                .gesture(
+                    LongPressGesture(minimumDuration:2)
+                        .onEnded{ _ in
+                            print("Pressed!")
+                        }
+                )
+            
+            Spacer().frame(height:50)
+            
+            // 移动的时候才会有打印
+            Image(systemName: "pencil")
+                .gesture(
+                    DragGesture(minimumDistance:50)
+                        .onEnded{ _ in
+                            print("Dragged!")
+                        }
+                )
+            
+            
+        }*/
+        
+        // 如何响应以查看生命周期事件：onAppear和onDisappear
+        /*
+        NavigationView{
+            VStack{
+                NavigationLink(destination: DetailView()){
+                    Text("Hello World!")
+                }
+            }
+        }.onAppear{
+            print("ContentView appeared!")
+        }.onDisappear{
+            print("ContentView disappeared!")
+        }
+        */
+        
+        // 如何使用labelsHidden（）隐藏Picker，Stepper，Toggle等标签
+        
+        /*
+         Picker(selection:$selectedNumber,label:EmptyView()){
+            ForEach(0..<10){
+                Text("\($0)")
+            }
+        }
+        */
+        
+        // 如何使用allowsHitTesting（）禁用视图的点击
+        
+        /*ZStack{
+            Button("Tap Me"){
+                print("Button was tapped")
+            }
+            .frame(width: 100, height: 100)
+            .background(Color.white)
+            
+            Rectangle()
+                .fill(Color.red.opacity(0.2))
+                .frame(width: 300, height: 300)
+                .clipShape(Circle())
+                .allowsTightening(false)
+        }
+        */
+        
+        // 如何检测将鼠标悬停在视图上
+        
+        /*Text("Hello, World!")
+            .foregroundColor(overText ? Color.green:Color.red)
+            .onHover{ over in
+                self.overText = over
+            }
+         */
+        
+        /*
+        Text("Tap me!")
+            .font(.largeTitle)
+            .hoverEffect(.lift)
+            .onTapGesture{
+                print("Text tapped")
+            }
+        */
+        
+        // 如何使用TextEditor创建多行可编辑文本
+        /*
+        TextEditor(text: $profileText)
+            .foregroundColor(.black)
+            .ignoresSafeArea()
+        */
+        
+        // 如何让用户使用ColorPicker选择颜色
+        /*
+        VStack{
+            ColorPicker("Set the backgroud color",selection:$bgColor, supportsOpacity:false)
+        }
+        .frame(maxWidth:.infinity,maxHeight: .infinity)
+        .background(bgColor)
+        */
+        
+        // 如何使用ProgressView显示任务的进度
+        /*
+        VStack{
+            ProgressView("Downloading...", value: downloadAmount, total:100)
+        }
+        */
+        
+        VStack{
+            ProgressView("Downloading...", value: downloadAmount, total: 100)
+        }
+        // 接收的时间 通过定时器来更新
+        .onReceive(timer){ _ in
+            if downloadAmount < 100 {
+                downloadAmount += 2
+            }
+        }
     }
 }
+
+
+#if canImport(UIKit)
+extension View {
+    func hideKeyboard(){
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil,for: nil)
+    }
+}
+
+
+#endif
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
