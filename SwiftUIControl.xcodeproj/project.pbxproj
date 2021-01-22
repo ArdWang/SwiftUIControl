@@ -12,6 +12,14 @@
 		BC4BB92925B6BC2900BDFC67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC4BB92825B6BC2900BDFC67 /* Assets.xcassets */; };
 		BC4BB92C25B6BC2900BDFC67 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC4BB92B25B6BC2900BDFC67 /* Preview Assets.xcassets */; };
 		BC4BB93525B6D0F800BDFC67 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4BB93425B6D0F800BDFC67 /* GameScene.swift */; };
+		BC6A70CD25BA53E300393508 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6A70CC25BA53E300393508 /* UserSettings.swift */; };
+		BC6A70D025BA56D200393508 /* UserAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6A70CF25BA56D200393508 /* UserAuthentication.swift */; };
+		BC6A70D325BA714700393508 /* RestaurantRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6A70D225BA714700393508 /* RestaurantRow.swift */; };
+		BC6A70D625BA720300393508 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6A70D525BA720300393508 /* Restaurant.swift */; };
+		BC6A70D925BA9BDD00393508 /* TaskRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6A70D825BA9BDD00393508 /* TaskRow.swift */; };
+		BC6A70DC25BAA10D00393508 /* ExampleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6A70DB25BAA10D00393508 /* ExampleRow.swift */; };
+		BC6A70DF25BAA33600393508 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6A70DE25BAA33600393508 /* User.swift */; };
+		BC6A70E225BAA43100393508 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6A70E125BAA43100393508 /* Bookmark.swift */; };
 		BC988AA025B959EA00825491 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC988A9F25B959EA00825491 /* DetailView.swift */; };
 		BCE8994F25B7B95C00685A12 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE8994E25B7B95C00685A12 /* Result.swift */; };
 		BCE8995225B7BC2100685A12 /* AdaptiveStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE8995125B7BC2100685A12 /* AdaptiveStack.swift */; };
@@ -27,6 +35,14 @@
 		BC4BB92B25B6BC2900BDFC67 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BC4BB92D25B6BC2900BDFC67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC4BB93425B6D0F800BDFC67 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		BC6A70CC25BA53E300393508 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		BC6A70CF25BA56D200393508 /* UserAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthentication.swift; sourceTree = "<group>"; };
+		BC6A70D225BA714700393508 /* RestaurantRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantRow.swift; sourceTree = "<group>"; };
+		BC6A70D525BA720300393508 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		BC6A70D825BA9BDD00393508 /* TaskRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRow.swift; sourceTree = "<group>"; };
+		BC6A70DB25BAA10D00393508 /* ExampleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleRow.swift; sourceTree = "<group>"; };
+		BC6A70DE25BAA33600393508 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BC6A70E125BAA43100393508 /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
 		BC988A9F25B959EA00825491 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		BCE8994E25B7B95C00685A12 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		BCE8995125B7BC2100685A12 /* AdaptiveStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveStack.swift; sourceTree = "<group>"; };
@@ -75,6 +91,14 @@
 				BCE8995425B7FF3700685A12 /* GridStack.swift */,
 				BCE8995725B804C100685A12 /* SampleRow.swift */,
 				BC988A9F25B959EA00825491 /* DetailView.swift */,
+				BC6A70CC25BA53E300393508 /* UserSettings.swift */,
+				BC6A70CF25BA56D200393508 /* UserAuthentication.swift */,
+				BC6A70D225BA714700393508 /* RestaurantRow.swift */,
+				BC6A70D525BA720300393508 /* Restaurant.swift */,
+				BC6A70D825BA9BDD00393508 /* TaskRow.swift */,
+				BC6A70DB25BAA10D00393508 /* ExampleRow.swift */,
+				BC6A70DE25BAA33600393508 /* User.swift */,
+				BC6A70E125BAA43100393508 /* Bookmark.swift */,
 			);
 			path = SwiftUIControl;
 			sourceTree = "<group>";
@@ -156,14 +180,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC6A70D025BA56D200393508 /* UserAuthentication.swift in Sources */,
 				BCE8995225B7BC2100685A12 /* AdaptiveStack.swift in Sources */,
 				BC988AA025B959EA00825491 /* DetailView.swift in Sources */,
+				BC6A70DC25BAA10D00393508 /* ExampleRow.swift in Sources */,
 				BC4BB93525B6D0F800BDFC67 /* GameScene.swift in Sources */,
 				BCE8995525B7FF3700685A12 /* GridStack.swift in Sources */,
+				BC6A70D925BA9BDD00393508 /* TaskRow.swift in Sources */,
+				BC6A70CD25BA53E300393508 /* UserSettings.swift in Sources */,
+				BC6A70DF25BAA33600393508 /* User.swift in Sources */,
 				BC4BB92725B6BC2200BDFC67 /* ContentView.swift in Sources */,
+				BC6A70D325BA714700393508 /* RestaurantRow.swift in Sources */,
+				BC6A70D625BA720300393508 /* Restaurant.swift in Sources */,
 				BCE8994F25B7B95C00685A12 /* Result.swift in Sources */,
 				BCE8995825B804C100685A12 /* SampleRow.swift in Sources */,
 				BC4BB92525B6BC2200BDFC67 /* SwiftUIControlApp.swift in Sources */,
+				BC6A70E225BAA43100393508 /* Bookmark.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

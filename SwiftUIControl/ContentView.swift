@@ -8,6 +8,8 @@
 import SwiftUI
 import AVKit
 import SpriteKit
+import MapKit
+import Combine
 
 struct ContentView: View {
     
@@ -132,6 +134,84 @@ struct ContentView: View {
     
     let timer1 = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
     
+    // 如何显示地图视图
+    
+    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+    
+    // 当状态更改时使用onChange（）如何运行一些代码
+    
+    @State private var name2 = ""
+    
+    // 如何在Safari中打开Web链接
+    
+    @Environment(\.openURL) var openURL
+    
+    // 如何使用@ObservedObject管理外部对象的状态
+    
+    @ObservedObject var settings = UserSettings()
+    
+    // 如何使用objectWillChange手动发送状态更新
+    
+    @ObservedObject var settings1 = UserAuthentication()
+    
+    // 如何使用@EnvironmentObject在视图之间共享数据
+    
+    @EnvironmentObject var settings2: UserSettings
+    
+    // 如何创建自定义绑定
+    @State private var usernamex = ""
+    
+    @State private var firstToggle = false
+    
+    @State private var secondToggle = false
+    
+    // 如何在SwiftUI中使用计时器
+    
+    @State var currentDate = Date()
+    
+    let timerx = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
+    @State var timeRemaining = 10
+    
+    // 如何让用户从列表中删除行
+    
+    @State private var users = ["Paul","Taylor","Adele"]
+    
+    // 如何使用隐式堆栈
+    
+    let users1 = [User(),User(),User()]
+    
+    // 如何创建扩展列表
+    
+    let items1: [Bookmark] = [.example1,.example2,.example3]
+    
+    // 基本表格设计
+    
+    @State private var enableLogging = false
+    
+    @State private var selectedColor1 = 0
+    
+    @State private var colorsqq = ["Red","Green","Blue"]
+    
+    // 表单选择器
+    
+    var strengths = ["Mild", "Medium", "Mature"]
+    
+    @State private var selectedStrength = 0
+    
+    // 启用和禁用表单中的元素
+    
+    @State private var agreedToTerms = false
+    
+    // 显示和隐藏表单行
+    
+    @State private var showingAdvancedOptions = false
+    
+    @State private var enbleLogging = false
+    
+    // 如何使用TabView将视图嵌入选项卡栏中
+    @State var selectedView = 1
+
     var body: some View {
 //        Text("This is an extremely long text string that will never fit even the widest of Phones")
 //            .font(.largeTitle)
@@ -997,6 +1077,7 @@ struct ContentView: View {
         }
         */
         
+        /*
         VStack{
             ProgressView("Downloading...", value: downloadAmount, total: 100)
         }
@@ -1006,6 +1087,483 @@ struct ContentView: View {
                 downloadAmount += 2
             }
         }
+        */
+        
+        // 如何使用ProgressView显示不确定的进度
+        /*
+        VStack{
+            ProgressView("Downloading...")
+        }
+        */
+        
+        // 如何显示地图视图
+        //Map(coordinateRegion: $region)
+        
+        // 当状态更改时使用onChange（）如何运行一些代码
+        
+        /*
+        TextField("Enter your name:", text:$name2)
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+            .onChange(of: name2, perform: { newValue in
+                print("Name changed to \(name2)!")
+            })
+        */
+        
+        // 如何在Safari中打开Web链接
+        
+        /*
+        VStack{
+            Link("Learn SwiftUI", destination:URL(string: "https://www.hackingwithswift.com/quick-start/swiftui")!)
+            
+            Spacer().frame(height:50)
+            
+            Link("Visit Apple", destination:URL(string: "https://www.baidu.com")!)
+                .font(.title)
+                .foregroundColor(.red)
+        
+            Spacer().frame(height:50)
+            
+            Link(destination:URL(string: "https://www.baidu.com")!){
+                Image(systemName: "link.circle.fill")
+                    .font(.largeTitle)
+            }
+            
+        }
+        */
+        /*
+        Button("Visit Apple"){
+            openURL(URL(string: "https://www.baidu.com")!)
+        }
+        */
+        
+        // 如何使用@ObservedObject管理外部对象的状态
+        /*
+        VStack{
+            Text("Your score is \(settings.score)")
+            Button(action:{
+                self.settings.score += 1
+            }){
+                Text("Increase Score")
+            }
+        }
+        */
+        
+        // 如何使用objectWillChange手动发送状态更新
+        /*
+        VStack{
+            TextField("Username", text:$settings1.username)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+            
+            Text("Your username is: \(settings1.username)")
+        }
+        */
+        
+        /*
+        NavigationView{
+            VStack{
+                Button(action:{
+                    self.settings2.score += 1
+                }){
+                    Text("Increase Score")
+                }
+                
+                NavigationLink(destination:DetailView()){
+                    Text("Show Detail View")
+                }
+            }
+        }
+        */
+        
+        // 如何创建常量绑定
+        
+        /*
+        Toggle(isOn: .constant(true)){
+            Text("Show advanced options")
+        }
+        */
+        
+        // 如何创建自定义绑定
+        /*
+        let binding = Binding(
+            get: {self.usernamex},
+            set: {self.usernamex = $0}
+        )
+        
+        return VStack{
+            TextField("Enter your name", text: binding)
+        }
+        */
+        
+        /*
+        let firstBinding = Binding(
+            get: {self.firstToggle},
+            set: {
+                self.firstToggle = $0
+                
+                if $0 == true {
+                    self.secondToggle = false
+                }
+            }
+        )
+        
+        let secondBinding = Binding(
+            get: {self.secondToggle},
+            set: {
+                self.secondToggle = $0
+                
+                if $0 == true {
+                    self.firstToggle = false
+                }
+            }
+        )
+        
+        return VStack{
+            Toggle(isOn: firstBinding){
+                Text("First toggle")
+            }
+            
+            Toggle(isOn: secondBinding){
+                Text("Second toggle")
+            }
+        }
+        */
+        
+        // 如何在SwiftUI中使用计时器
+        /*
+        Text("\(currentDate)")
+            .onReceive(timerx, perform: { input in
+                self.currentDate = input
+            })
+        */
+        
+        // 倒计时
+        
+        /*
+        Text("\(timeRemaining)")
+            .onReceive(timerx){ _ in
+                if self.timeRemaining > 0 {
+                    self.timeRemaining -= 1
+                }
+            }
+        */
+        
+        // 如何创建静态项目列表
+        
+        /*
+        List{
+            RestaurantRow(name:"Joe's Original")
+            RestaurantRow(name:"The Real Joe's Original")
+            RestaurantRow(name:"Original Joe's")
+        }
+        */
+        
+        
+        // 如何创建动态项目列表
+        /*
+        let first = Restaurant(name: "Joe's Original")
+        let second = Restaurant(name: "The Real Joe's Original")
+        let third = Restaurant(name: "Original Joe's")
+        let restaurants = [first, second, third]
+        
+        //return List(restaurants){ restaurant in
+        //    RestaurantRow(restaurant: restaurant)
+        //}
+        
+        return List(restaurants, rowContent:RestaurantRow.init)
+        */
+        
+        // 如何让用户从列表中删除行
+        /*
+        NavigationView{
+            List{
+                ForEach(users, id: \.self){ user in
+                    Text(user)
+                }
+                .onDelete(perform: delete)
+            }
+        }
+        */
+        
+        // 如何让用户在列表中移动行
+        /*
+        NavigationView{
+            List{
+                ForEach(users, id:\.self){ user in
+                    Text(user)
+                }
+                .onMove(perform: move)
+            }
+            .navigationBarItems(trailing: EditButton())
+        }
+        */
+        
+        /*
+        NavigationView{
+            List{
+                ForEach(users, id: \.self){ user in
+                    Text(user)
+                }
+                .onDelete(perform: delete)
+            }
+            .navigationBarItems(trailing: EditButton())
+        }
+        */
+        
+        // 如何将部分添加到列表
+        /*
+        List{
+            Section(header:Text("Important tasks")){
+                TaskRow()
+                TaskRow()
+                TaskRow()
+            }
+            
+            Section(header:Text("other tasks"), footer:Text("End")){
+                TaskRow()
+                TaskRow()
+                TaskRow()
+            }
+        }
+        */
+        
+        
+        // 如何制作分组清单
+        /*
+        List{
+            Section(header:Text("Examples")){
+                ExampleRow()
+                ExampleRow()
+                ExampleRow()
+            }
+        }.listStyle(GroupedListStyle())
+        */
+        
+        // 如何使用listRowBackground（）设置列表行的背景色
+        
+        /*
+        List{
+            ForEach(0..<10){
+                Text("Row \($0)")
+            }
+            .listRowBackground(Color.red)
+        }
+        */
+        
+        // 如何创建分组和插入分组列表
+        /*
+        List(0..<100){ i in
+            Text("Row \(i)")
+        }
+        .listStyle(InsetGroupedListStyle())
+        */
+        
+        // 如何使用隐式堆栈
+        /*
+        List(users1){ user in
+            Image(systemName: "pencil")
+                .resizable()
+                .frame(width: 40, height: 40)
+            Text(user.username)
+        }
+        */
+        
+        // 如何创建扩展列表
+        
+        /*
+        List(items1, children:\.items){ row in
+            Image(systemName: row.icon)
+            Text(row.name)
+        }
+        */
+        
+        // 如何滚动到列表中的特定行
+        /*
+        ScrollViewReader{ proxy in
+            VStack{
+                Button("Jump to # 50"){
+                    proxy.scrollTo(50, anchor: .top)
+                }
+                
+                List(0..<100){ i in
+                    Text("Example \(i)")
+                        .id(i)
+                }
+            }
+        }
+        */
+        
+        // 您可以在表单中根据需要添加任意多的行，但是如果需要的行数超过10，请记住使用组。
+        /*
+        NavigationView{
+            Form{
+                Picker(selection: $selectedColor1, label: Text("Select a color")){
+                    ForEach(0 ..< colorsqq.count){
+                        Text(self.colorsqq[$0]).tag($0)
+                    }
+                }.pickerStyle(SegmentedPickerStyle())
+                
+                Toggle(isOn:$enableLogging){
+                    Text("Enable Logging")
+                }
+                
+                Button(action:{
+                    
+                }){
+                    Text("Save changes")
+                }
+            }.navigationTitle("Settings")
+        }
+        */
+        
+        // 将表格分为几个部分
+        /*
+        NavigationView{
+            Form{
+                Section(footer:Text("Note: Enabling logging may slow down the app")){
+                    Picker(selection:$selectedColor1, label:Text("Select a color")){
+                        ForEach(0 ..< colorsqq.count){
+                            Text(self.colorsqq[$0]).tag($0)
+                        }
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                    
+                    Toggle(isOn:$enableLogging){
+                        Text("Enable Logging")
+                    }
+                    
+                }
+                
+                Section{
+                    Button(action:{
+                        
+                    }){
+                        Text("Save changes")
+                    }
+                }
+            }.navigationTitle("Settings")
+        }
+        */
+        
+        // 表单选择器
+        
+        /*
+        NavigationView{
+            Form{
+                Section{
+                    Picker(selection:$selectedStrength, label:Text("Strength")){
+                        ForEach(0 ..< strengths.count){
+                            Text(self.strengths[$0])
+                        }
+                    }.pickerStyle(WheelPickerStyle())
+                }
+            }.navigationBarTitle("Select your cheese")
+        }
+        */
+        
+        
+        // 启用和禁用表单中的元素
+        /*
+        NavigationView{
+            Form{
+                Section{
+                    Toggle(isOn: $agreedToTerms){
+                        Text("Agree to terms and conditions")
+                    }
+                }
+                
+                Section{
+                    Button(action:{
+                        
+                    }){
+                        Text("Continue")
+                    }.disabled(!agreedToTerms)
+                }
+            }.navigationBarTitle("Welcome")
+        }
+        */
+        
+        
+        // 显示和隐藏表单行
+        /*
+        Form{
+            Section{
+                Toggle(isOn:$showingAdvancedOptions.animation()){
+                    Text("Show advanced options")
+                }
+                
+                if showingAdvancedOptions {
+                    Toggle(isOn: $enableLogging){
+                        Text("Enable logging")
+                    }
+                }
+            }
+        }
+        */
+        
+        // 如何在导航视图中嵌入视图
+        // 增加这个之后 自动的 变成中间的部分
+        /*
+        NavigationView{
+            Text("This is a great app")
+                .navigationBarTitle("Welcome", displayMode: .inline)
+        }
+        */
+        // 如何将栏项目添加到导航视图
+        /*
+        NavigationView{
+            Text("SwiftUI")
+                .navigationBarTitle("Welcome")
+                .navigationBarItems(trailing:
+                                        Button("Help"){
+                                            print("Help tapped!")
+                                        }
+                )
+        }
+        */
+        
+        /*
+        NavigationView{
+            Text("SwiftUI")
+                .navigationBarTitle("Welcome")
+                .navigationBarItems(trailing:
+                                        HStack{
+                                            Button("About"){
+                                                print("About tapped!")
+                                            }
+                                            
+                                            Button("Help"){
+                                                print("Help tapped!")
+                                            }
+                                        }
+                )
+        }
+        */
+        
+        // 如何使用TabView将视图嵌入选项卡栏中
+        
+        TabView(selection:$selectedView){
+            Text("First View")
+                .tabItem {
+                    Image(systemName: "1.circle")
+                    Text("First")
+                }.tag(0)
+            Text("Second View")
+                .tabItem {
+                    Image(systemName: "2.circle")
+                    Text("Second")
+                }.tag(1)
+        }
+        
+        
+    }
+    
+    
+    func delete(at offsets: IndexSet){
+        users.remove(atOffsets: offsets)
+    }
+    
+    func move(from source: IndexSet, to destination: Int){
+        users.move(fromOffsets: source, toOffset: destination)
     }
 }
 
@@ -1022,6 +1580,7 @@ extension View {
 
 
 struct ContentView_Previews: PreviewProvider {
+    
     static var previews: some View {
         ContentView()
     }

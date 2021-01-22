@@ -2,7 +2,11 @@
 This is swifiuicontrol
 
 
-2021 1/21
+2021 1/22
+
+学习到了 
+
+2021 1/21 https://www.hackingwithswift.com/quick-start/swiftui/how-to-embed-views-in-a-tab-bar-using-tabview 
 
 学习到了 https://www.hackingwithswift.com/quick-start/swiftui/how-to-show-progress-on-a-task-using-progressview
 
