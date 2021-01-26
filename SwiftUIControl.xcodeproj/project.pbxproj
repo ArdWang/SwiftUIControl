@@ -21,6 +21,15 @@
 		BC6A70DF25BAA33600393508 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6A70DE25BAA33600393508 /* User.swift */; };
 		BC6A70E225BAA43100393508 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6A70E125BAA43100393508 /* Bookmark.swift */; };
 		BC988AA025B959EA00825491 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC988A9F25B959EA00825491 /* DetailView.swift */; };
+		BCCD966125BFA96100B391EE /* RestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCD966025BFA96100B391EE /* RestaurantView.swift */; };
+		BCCD966425BFC8BF00B391EE /* NewUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCD966325BFC8BF00B391EE /* NewUserView.swift */; };
+		BCDE7BB825BE44F3007BBF8B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDE7BB725BE44F3007BBF8B /* HomeView.swift */; };
+		BCDE7BBB25BE4504007BBF8B /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDE7BBA25BE4504007BBF8B /* AccountView.swift */; };
+		BCDE7BBE25BE4526007BBF8B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDE7BBD25BE4526007BBF8B /* ProfileView.swift */; };
+		BCDE7BC125BE4539007BBF8B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDE7BC025BE4539007BBF8B /* SettingsView.swift */; };
+		BCDE7BC425BE460F007BBF8B /* SwiftUITestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDE7BC325BE460F007BBF8B /* SwiftUITestApp.swift */; };
+		BCDE7BC725BE4F0A007BBF8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDE7BC625BE4F0A007BBF8B /* AppDelegate.swift */; };
+		BCDE7BCA25BEA7C6007BBF8B /* FullScreenModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDE7BC925BEA7C6007BBF8B /* FullScreenModalView.swift */; };
 		BCE8994F25B7B95C00685A12 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE8994E25B7B95C00685A12 /* Result.swift */; };
 		BCE8995225B7BC2100685A12 /* AdaptiveStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE8995125B7BC2100685A12 /* AdaptiveStack.swift */; };
 		BCE8995525B7FF3700685A12 /* GridStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE8995425B7FF3700685A12 /* GridStack.swift */; };
@@ -44,6 +53,15 @@
 		BC6A70DE25BAA33600393508 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BC6A70E125BAA43100393508 /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
 		BC988A9F25B959EA00825491 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		BCCD966025BFA96100B391EE /* RestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantView.swift; sourceTree = "<group>"; };
+		BCCD966325BFC8BF00B391EE /* NewUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserView.swift; sourceTree = "<group>"; };
+		BCDE7BB725BE44F3007BBF8B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		BCDE7BBA25BE4504007BBF8B /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		BCDE7BBD25BE4526007BBF8B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		BCDE7BC025BE4539007BBF8B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		BCDE7BC325BE460F007BBF8B /* SwiftUITestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUITestApp.swift; sourceTree = "<group>"; };
+		BCDE7BC625BE4F0A007BBF8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BCDE7BC925BEA7C6007BBF8B /* FullScreenModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenModalView.swift; sourceTree = "<group>"; };
 		BCE8994E25B7B95C00685A12 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		BCE8995125B7BC2100685A12 /* AdaptiveStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveStack.swift; sourceTree = "<group>"; };
 		BCE8995425B7FF3700685A12 /* GridStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStack.swift; sourceTree = "<group>"; };
@@ -99,6 +117,15 @@
 				BC6A70DB25BAA10D00393508 /* ExampleRow.swift */,
 				BC6A70DE25BAA33600393508 /* User.swift */,
 				BC6A70E125BAA43100393508 /* Bookmark.swift */,
+				BCDE7BB725BE44F3007BBF8B /* HomeView.swift */,
+				BCDE7BBA25BE4504007BBF8B /* AccountView.swift */,
+				BCDE7BBD25BE4526007BBF8B /* ProfileView.swift */,
+				BCDE7BC025BE4539007BBF8B /* SettingsView.swift */,
+				BCDE7BC325BE460F007BBF8B /* SwiftUITestApp.swift */,
+				BCDE7BC625BE4F0A007BBF8B /* AppDelegate.swift */,
+				BCDE7BC925BEA7C6007BBF8B /* FullScreenModalView.swift */,
+				BCCD966025BFA96100B391EE /* RestaurantView.swift */,
+				BCCD966325BFC8BF00B391EE /* NewUserView.swift */,
 			);
 			path = SwiftUIControl;
 			sourceTree = "<group>";
@@ -180,20 +207,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCDE7BC725BE4F0A007BBF8B /* AppDelegate.swift in Sources */,
 				BC6A70D025BA56D200393508 /* UserAuthentication.swift in Sources */,
 				BCE8995225B7BC2100685A12 /* AdaptiveStack.swift in Sources */,
 				BC988AA025B959EA00825491 /* DetailView.swift in Sources */,
 				BC6A70DC25BAA10D00393508 /* ExampleRow.swift in Sources */,
 				BC4BB93525B6D0F800BDFC67 /* GameScene.swift in Sources */,
+				BCDE7BC125BE4539007BBF8B /* SettingsView.swift in Sources */,
+				BCCD966425BFC8BF00B391EE /* NewUserView.swift in Sources */,
+				BCDE7BB825BE44F3007BBF8B /* HomeView.swift in Sources */,
+				BCDE7BC425BE460F007BBF8B /* SwiftUITestApp.swift in Sources */,
+				BCDE7BBB25BE4504007BBF8B /* AccountView.swift in Sources */,
 				BCE8995525B7FF3700685A12 /* GridStack.swift in Sources */,
+				BCCD966125BFA96100B391EE /* RestaurantView.swift in Sources */,
 				BC6A70D925BA9BDD00393508 /* TaskRow.swift in Sources */,
 				BC6A70CD25BA53E300393508 /* UserSettings.swift in Sources */,
 				BC6A70DF25BAA33600393508 /* User.swift in Sources */,
 				BC4BB92725B6BC2200BDFC67 /* ContentView.swift in Sources */,
 				BC6A70D325BA714700393508 /* RestaurantRow.swift in Sources */,
+				BCDE7BCA25BEA7C6007BBF8B /* FullScreenModalView.swift in Sources */,
 				BC6A70D625BA720300393508 /* Restaurant.swift in Sources */,
 				BCE8994F25B7B95C00685A12 /* Result.swift in Sources */,
 				BCE8995825B804C100685A12 /* SampleRow.swift in Sources */,
+				BCDE7BBE25BE4526007BBF8B /* ProfileView.swift in Sources */,
 				BC4BB92525B6BC2200BDFC67 /* SwiftUIControlApp.swift in Sources */,
 				BC6A70E225BAA43100393508 /* Bookmark.swift in Sources */,
 			);

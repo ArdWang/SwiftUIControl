@@ -10,6 +10,8 @@ import AVKit
 import SpriteKit
 import MapKit
 import Combine
+import UIKit
+// import SKOverlay
 
 struct ContentView: View {
     
@@ -211,7 +213,51 @@ struct ContentView: View {
     
     // 如何使用TabView将视图嵌入选项卡栏中
     @State var selectedView = 1
-
+    
+    // 如何隐藏和显示状态栏
+    @State var hideStatusBar = false
+    
+    // 如何使用DisclosureGroup隐藏和显示内容
+    @State private var revealDetails = false
+    
+    // 如何显示警报
+    
+    @State private var showingAlert = false
+    
+    // 如何在单个视图中显示多个警报
+    
+    @State private var showingAlert1 = false
+    
+    @State private var showingAlert2 = false
+    
+    // 如何显示动作表
+    
+    @State private var showingSheet = false
+    
+    // 如何使用fullScreenCover（）呈现全屏模式视图
+    
+    @State private var isPresented = false
+    
+    // 如何使用appStoreOverlay（）推荐另一个应用
+    
+    @State private var showRecommended = false
+    
+    // 如何使视图自行关闭
+    
+    @Environment(\.presentationMode) var presentationMode
+    
+    @State var showingNewUserView = false
+    
+    //self.presentationMode.wrappedValue.dismiss()
+    
+    // 如何创建行军蚂蚁边框效果
+    
+    @State private var phase: CGFloat = 0
+    
+    // 如何旋转视图
+    @State private var rotation = 0.0
+    
+    
     var body: some View {
 //        Text("This is an extremely long text string that will never fit even the widest of Phones")
 //            .font(.largeTitle)
@@ -1540,7 +1586,7 @@ struct ContentView: View {
         */
         
         // 如何使用TabView将视图嵌入选项卡栏中
-        
+        /*
         TabView(selection:$selectedView){
             Text("First View")
                 .tabItem {
@@ -1553,14 +1599,532 @@ struct ContentView: View {
                     Text("Second")
                 }.tag(1)
         }
+        */
+        
+        // 如何使用tabViewStyle（）创建内容的滚动页面
+        
+        /*Text("Hello, World")
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.black)
+        */
+        
+        // 如何将视图分组在一起
+        /*
+        VStack{
+            Group{
+                Text("Line")
+                Text("Line")
+                Text("Line")
+                Text("Line")
+                Text("Line")
+                Text("Line")
+                Text("Line")
+                Text("Line")
+                Text("Line")
+            }
+            
+            Group{
+                Text("Line")
+                Text("Line")
+                Text("Line")
+                Text("Line")
+                Text("Line")
+                Text("Line")
+            }
+        }
+        */
+        
+        // 如何隐藏和显示状态栏
+        /*
+        Button("Toggle Status Bar"){
+            withAnimation{
+                self.hideStatusBar.toggle()
+            }
+        }
+        .statusBar(hidden: hideStatusBar)
+        */
+        
+        // 如何使用DisclosureGroup隐藏和显示内容
+        /*
+        VStack{
+            DisclosureGroup("Show Terms", isExpanded:$revealDetails){
+                Text("Long terms and conditions here long terms and conditions here long terms and conditions here long terms and conditions here long terms and conditions here long terms and conditions here.")
+            }
+            .padding()
+            Spacer()
+        }
+        */
+        
+        // 如何创建工具栏并向其中添加按钮
+        /*
+        NavigationView{
+            Text("Hello, World!").padding()
+                .navigationTitle("SwiftUI")
+                .toolbar{
+                    ToolbarItem(placement: .bottomBar){
+                        HStack{
+                            Button("First"){
+                                print("Pressed")
+                            }
+                            
+                            Button("Second"){
+                                print("Pressed")
+                            }
+                        }
+                        
+                    }
+                }
+        }
+        */
+        
+        // 如何显示警报
+        /*
+        Button(action:{
+            self.showingAlert = true
+        }){
+            Text("Show Alert")
+        }
+        .alert(isPresented:$showingAlert){
+            Alert(title: Text("Important message"), message: Text("Wear sunscreen"), dismissButton: .default(Text("Got it!")))
+        }
+        */
+        
+        // 如何在单个视图中显示多个警报
+        
+        /*
+        VStack{
+            
+            Button("Show 1"){
+                self.showingAlert1 = true
+            }
+            .alert(isPresented: $showingAlert1){
+                Alert(title: Text("One"), message: nil, dismissButton: .cancel())
+            }
+            
+            Button("Show 2"){
+                self.showingAlert2 = true
+            }
+            .alert(isPresented: $showingAlert2){
+                Alert(title: Text("Two"), message: nil,
+                      dismissButton: .cancel())
+            }
+            
+        }
+        */
+        
+        // 如何向警报按钮添加操作
+        /*
+        Button(action:{
+            self.showingAlert = true
+        }){
+            Text("Show Alert")
+        }
+        .alert(isPresented:$showingAlert){
+            Alert(title: Text("Are you sure you want to delete this?"), message: Text("There is no undo"), primaryButton: .destructive(Text("Delete")){
+                print("Deleting...")
+            },secondaryButton: .cancel())
+        }
+        */
+        
+        // 如何显示动作表
+        /*
+        Button(action:{
+            self.showingSheet = true
+        }){
+            Text("Show Action Sheet")
+        }
+        .actionSheet(isPresented: $showingSheet){
+            ActionSheet(title: Text("What do you want to do?"), message: Text("Quote mark"), buttons: [.default(Text("Show Sheet"))])
+        }
+        */
+        
+        // 如何显示上下文菜单
+        /*
+        Text("Options")
+            .contextMenu{
+                Button(action:{
+                    
+                }){
+                    Text("Choose Country")
+                    Image(systemName: "globe")
+                }
+                
+                Button(action:{
+                    
+                }){
+                    Text("Detect Location")
+                    Image(systemName: "location.circle")
+                }
+            }
+        */
         
         
+        // 如何使用fullScreenCover（）呈现全屏模式视图
+        /*
+        Button("Present!"){
+            self.isPresented.toggle()
+        }
+        .fullScreenCover(isPresented: $isPresented, content: FullScreenModalView.init)
+        */
+        
+        // 如何使用appStoreOverlay（）推荐另一个应用
+        /*
+        Button("Show Recommended App") {
+            self.showRecommended.toggle()
+        }
+        */
+        /*.appStoreOverlay(isPresented: $showRecommended) {
+           // SKOverlay.AppConfiguration(appIdentifier: "1440611372", position: .bottom)
+        }
+        */
+        
+        // 按下按钮时如何显示菜单
+        /*
+        Menu("Options"){
+            Button("Order Now", action:{
+                print("Order Now")
+            })
+            
+            Button("Adjust Order", action:{
+                print("Adjust Order")
+            })
+            
+            Button("Cancel", action:{
+                print("Cancel")
+            })
+        }
+        */
+        /*
+        Menu("Options"){
+            Button("Order Now", action:{
+                print("Order Now")
+            })
+            
+            Button("Adjust Order", action:{
+                print("Adjust Order")
+            })
+            
+            Menu("Advance"){
+                Button("Rename", action:{
+                    print("Rename")
+                })
+                Button("Delay", action:{
+                    print("Delay")
+                })
+            }
+            
+            Button("Cancel", action:{
+                print("Cancel")
+            })
+        }
+        */
+        
+        /*
+        Menu{
+            Button("Order Now", action:{
+                print("Order Now")
+            })
+            
+            Button("Adjust Order", action:{
+                print("Adjust Now")
+            })
+        } label:{
+            Label("Options", systemImage:"paperplane")
+        }
+        */
+        
+        // 如何将新视图推送到NavigationView
+        /*
+        NavigationView{
+            VStack{
+                NavigationLink(destination:DetailView()){
+                    Text("Show Detail View")
+                }.navigationBarTitle("Navigation")
+            }
+        }
+        */
+        
+        
+        // 点击列表行时如何推送新视图
+        
+        /*
+        let first = Restaurant(name: "Joe's Original")
+        let restaurants = [first]
+        
+        return NavigationView{
+            List(restaurants){ restaurant in
+                NavigationLink(destination:RestaurantView(restaurant: restaurant)){
+                    RestaurantRow(restaurant: restaurant)
+                }
+            }.navigationBarTitle("Select a restaurant")
+        }
+        */
+        
+        // 如何使用图纸呈现新视图
+        /*
+        Button(action:{
+            self.showDetails.toggle()
+        }){
+           Text("Show Detail")
+        }.sheet(isPresented: $showDetails){
+            DetailView()
+        }
+        */
+        
+        // 如何使视图自行关闭
+        /*
+        Button(action:{
+            self.showingNewUserView.toggle()
+        }){
+           Text("Show Detail")
+        }.sheet(isPresented: $showingNewUserView){
+            NewUserView(isPresented: self.$showingNewUserView)
+        }
+        */
+        
+        // 如何使用其偏移量调整视图的位置
+        /*
+        VStack{
+            Text("Home")
+            Text("Options")
+                .offset(y:15)
+                .padding(.bottom, 15)
+            Text("Help")
+        }
+        */
+        
+        /*
+        ZStack(alignment:.bottomTrailing){
+            Image(systemName: "pencil")
+            Text("Photo: dadasdas")
+                .padding(4)
+                .background(Color.black)
+                .foregroundColor(.white)
+                .offset(x:-5, y:-5)
+        }
+        */
+        
+        // 如何为视图周围的填充着色
+        
+        /*
+        Text("Hacking with Swift")
+            .background(Color.black)
+            .foregroundColor(.white)
+            .padding()
+        */
+        
+        /*
+        Text("Hacking with Swift")
+            .padding()
+            .background(Color.black)
+            .foregroundColor(.white)
+        */
+        
+        // 如何堆叠修改器以创建更高级的效果
+        
+        /*
+        Text("Forecast: Sun")
+            .font(.largeTitle)
+            .foregroundColor(.white)
+            .padding()
+            .background(Color.red)
+            .padding()
+            .background(Color.orange)
+            .padding()
+            .background(Color.yellow)
+        */
+        
+        // 如何在视图周围绘制边框
+
+        /*
+        Text("Hack with Swift")
+            .border(Color.black)
+        */
+ 
+        /*
+        Text("Hacking with Swift")
+            .padding()
+            .border(Color.black)
+        */
+        
+        /*
+        Text("Hacking with Swift")
+            .padding()
+            .border(Color.red, width: 4)
+        */
+        
+        // 带圆角的
+        /*
+        Text("Hacking with Swift")
+            .padding()
+            .overlay(
+                RoundedRectangle(cornerRadius: 16)
+                    .stroke(Color.blue, lineWidth: 4)
+            )
+        */
+        
+        // 如何在视图内绘制边框
+        
+        /*
+        Circle()
+            .strokeBorder(Color.blue, lineWidth: 50)
+        */
+        /*
+        Circle().stroke(Color.blue, lineWidth: 50)
+        */
+        
+        // 如何创建行军蚂蚁边框效果
+        // dash 每个间隔 10
+        
+        /*
+        Rectangle()
+            .strokeBorder(style: StrokeStyle(lineWidth:4, dash: [10]))
+        */
+        
+        /*
+        Rectangle()
+            .strokeBorder(style: StrokeStyle(lineWidth:4,dash: [10],dashPhase: phase))
+            .frame(width:200, height:200)
+            .onAppear{self.phase -= 20}
+            .animation(Animation.linear.repeatForever(autoreverses: false))
+        */
+        
+        // 如何在视图周围绘制阴影
+        
+        /*
+        Text("Hacking with Swift")
+            .padding()
+            .shadow(radius: 5)
+            .border(Color.red, width: 4)
+        */
+        
+        /*
+        Text("Hacking with Swift")
+            .padding()
+            // 阴影效果
+            .shadow(color:.red, radius: 5)
+            .border(Color.red, width: 4)
+        */
+
+        /*
+        Text("Hacking with Swift")
+            .padding()
+            .shadow(color:.red, radius: 5, x:20, y:20)
+            .border(Color.red, width: 4)
+        */
+        
+        /*
+        Text("Hacking with Swift")
+            .padding()
+            .border(Color.red, width: 4)
+            .shadow(color:.red, radius: 5, x:10, y:10)
+        */
+        
+        // 如何裁剪视图以便仅可见部分
+        
+        /*
+        Button(action:{
+            print("Button tapped")
+        }){
+            Image(systemName: "bolt.fill")
+                .foregroundColor(.white)
+                .padding()
+                .background(Color.green)
+                .clipShape(Circle())
+        }
+        */
+        
+        /*
+        Button(action:{
+            print("Button tapped")
+        }){
+            Image(systemName: "bolt.fill")
+                .foregroundColor(.white)
+                .padding(EdgeInsets(top:10,leading: 20,bottom: 10,trailing: 20))
+                .background(Color.green)
+                .clipShape(Capsule())
+        }
+        */
+        
+        // 如何旋转视图
+        
+        /*
+        Text("Up we go")
+            .rotationEffect(.degrees(-90))
+        */
+        
+        /*
+        Text("Up we go")
+            .rotationEffect(.radians(.pi))
+        */
+        
+        /*
+        VStack{
+            Slider(value: $rotation, in:0...360, step:1.0)
+            Text("Up we go")
+                .rotationEffect(.degrees(rotation))
+        }
+        */
+        
+        /*
+        VStack{
+            Slider(value: $rotation, in:0...360, step:1.0)
+            Text("Up we go")
+                .rotationEffect(.degrees(rotation), anchor: .topLeading)
+        }
+        */
+        
+        // 如何旋转3D视图
+        
+        /*
+        Text("EPISODE LLVM")
+            .font(.largeTitle)
+            .foregroundColor(.yellow)
+            .rotation3DEffect(
+                .degrees(45),
+                axis: (x:1, y:0, z:0))
+ 
+        */
+        
+        // 如何放大或缩小视图
+        /*
+        Text("Up we go")
+            .scaleEffect(5)
+        */
+        
+        /*
+        Text("Up we go")
+            .scaleEffect(x:1, y:5)
+        */
+        
+        /*
+        Text("Up we go")
+            .scaleEffect(2, anchor: .bottomTrailing)
+        */
+ 
+        // 如何绕过一个角落
+        /*
+        Text("Round Me")
+            .padding()
+            .background(Color.red)
+            .cornerRadius(25)
+        */
+        
+        // 如何调整视图的不透明度
+        
+        // opacity 调整透明度
+        Text("Now you see me")
+            .padding()
+            .background(Color.red)
+            .opacity(0.3)
+ 
     }
     
     
     func delete(at offsets: IndexSet){
         users.remove(atOffsets: offsets)
     }
+    
     
     func move(from source: IndexSet, to destination: Int){
         users.move(fromOffsets: source, toOffset: destination)
