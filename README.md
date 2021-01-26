@@ -1,6 +1,11 @@
 # SwiftUIControl
 This is swifiuicontrol
 
+2021 1/26
+
+学到了
+
+https://www.hackingwithswift.com/quick-start/swiftui/how-to-adjust-the-opacity-of-a-view
 
 2021 1/22
 
