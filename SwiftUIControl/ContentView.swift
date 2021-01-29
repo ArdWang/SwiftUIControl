@@ -257,6 +257,60 @@ struct ContentView: View {
     // 如何旋转视图
     @State private var rotation = 0.0
     
+    // 如何使用matchedGeometryEffect（）将动画从一个视图同步到另一个视图
+    
+    @State private var isFlipped = false
+    
+    
+    @Namespace private var animation
+    
+    @State private var isZoomed = false
+    
+    var frame: CGFloat{
+        isZoomed ? 300 : 44
+    }
+    
+    
+    // 如何创建基本动画
+    
+    @State private var scale1: CGFloat = 1
+    
+    @State private var angle: Double = 0
+    
+    @State private var borderThickness: CGFloat = 1
+    
+    // 如何为绑定值的变化制作动画
+    
+    @State private var showingWelcome = false
+    
+    // 如何创建一个明确的动画
+    
+    @State private var opacity = 1.0
+    
+    // 如何延迟动画
+    
+    @State var rotationm = 0.0
+    
+    // 视图出现后如何立即开始动画
+    
+    @State var scalex: CGFloat = 1
+    
+    
+    // 如何将多个动画应用于视图
+    
+    @State var isEnabled11 = false
+    
+    // 如何通过过渡添加和删除视图
+    
+    @State private var showDetailsx = false
+    
+    // 如何创建自定义过渡
+    
+    @State private var isShowingRed = false
+    
+    // 如何设置文字大小的动画
+    
+    @State private var fontSize1: CGFloat = 32
     
     var body: some View {
 //        Text("This is an extremely long text string that will never fit even the widest of Phones")
@@ -2113,11 +2167,373 @@ struct ContentView: View {
         // 如何调整视图的不透明度
         
         // opacity 调整透明度
+        /*
         Text("Now you see me")
             .padding()
             .background(Color.red)
             .opacity(0.3)
+         */
+        
+        // 如何调整视图的强调色
+        /*
+        VStack{
+            Button(action:{
+                
+            }){
+                Text("Tap here")
+            }
+        }.accentColor(.orange)
+        */
+        
+        // 如何用另一个遮罩一个视图
+        /*
+        Image(systemName: "pencil")
+            .resizable()
+            .frame(width:300, height: 300)
+            .mask(Text("SWIFT!"))
+            .font(Font.system(size: 72).weight(.black))
+        */
+        
+        // 如何模糊视图
+        
+        /*
+        Image(systemName: "pencil")
+            .resizable()
+            .frame(width: 300, height: 300)
+            .blur(radius: 20)
+        */
+        
+        /*
+        Text("Welcome to my SwiftUI app")
+            .blur(radius: 2)
+        */
+        
+        // 如何将视图融合在一起
+        /*
+        ZStack{
+            Image(systemName: "pencil")
+            Image(systemName: "heart")
+                .blendMode(.multiply)
+        }
+        */
+        
+        // 如何通过着色和去饱和等来调整视图
+        /*
+        Image(systemName: "heart")
+            .colorMultiply(.red)
+        */
+        
+        /*
+        Image(systemName: "heart")
+            .saturation(0.5)
+        */
+        
+        /*
+        Image(systemName: "heart")
+            .contrast(0.5)
+        */
+        
+        // 如何使用matchedGeometryEffect（）将动画从一个视图同步到另一个视图
+        // 可以用于平滑
+        /*
+        VStack{
+            if isFlipped {
+                Circle()
+                    .fill(Color.red)
+                    .frame(width: 44, height: 44)
+                    .matchedGeometryEffect(id: "Shape", in: animation)
+                Text("Taylor Swift - 1989")
+                    .matchedGeometryEffect(id: "AlbumTitle", in: animation)
+                    .font(.headline)
+            }else{
+                Text("Taylor Swift - 1989")
+                    .matchedGeometryEffect(id: "AlbumTitle", in: animation)
+                    .font(.headline)
+                Circle()
+                    .fill(Color.blue)
+                    .frame(width: 44, height: 44)
+                    .matchedGeometryEffect(id: "Shape", in: animation)
+            }
+        }
+        .onTapGesture{
+            withAnimation{
+                self.isFlipped.toggle()
+            }
+        }
+        */
+        
+        /*
+        VStack{
+            
+            Spacer()
+            
+            VStack{
+                HStack{
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color.blue)
+                        .frame(width: frame, height: frame)
+                        .padding(.top, isZoomed ? 20:0)
+                    
+                    if isZoomed == false {
+                        Text("Taylor Swift - 1989")
+                            .matchedGeometryEffect(id: "AlbumTitle", in: animation)
+                        Spacer()
+                    }
+                }
+                
+                if isZoomed == true {
+                    Text("Taylor Swift - 1989")
+                        .matchedGeometryEffect(id: "AlbumTitle", in: animation)
+                        .font(.headline)
+                        .padding(.bottom, 60)
+                    Spacer()
+                }
+            }
+            .onTapGesture{
+                withAnimation(.spring()){
+                    self.isZoomed.toggle()
+                }
+            }
+            .padding()
+            .frame(maxWidth:.infinity)
+            .frame(height: isZoomed ? 400 : 60)
+            .background(Color(white: 0.9))
+        }
  
+        */
+        
+        // SwiftUI的内置形状
+        /*
+        ZStack{
+            Rectangle()
+                .fill(Color.black)
+                .frame(width: 200, height: 200)
+            
+            RoundedRectangle(cornerRadius: 25, style: .continuous)
+                .fill(Color.red)
+                .frame(width: 200, height: 200)
+            
+            Capsule()
+                .fill(Color.green)
+                .frame(width: 100, height: 50)
+            
+            Ellipse()
+                .fill(Color.blue)
+                .frame(width: 100, height: 50)
+            
+        }
+        */
+        
+        // 如何绘制自定义路径
+        /*
+        SpiroSquare()
+            .stroke()
+            .frame(width: 200, height: 200)
+        */
+        
+        // 如何绘制多边形和星星
+        
+        /*
+        Star(corners: 5, smoothness: 0.45)
+            .fill(Color.red)
+            .frame(width: 200, height: 200)
+            .background(Color.green)
+         */
+        
+        // 如何画一个棋盘
+        
+        /*
+        Checkerboard(rows: 16, columns: 16)
+            .fill(Color.red)
+            .frame(width: 200, height: 200)
+        */
+        
+        // 如何在SwiftUI中使用UIBezierPath和CGPath
+        /*
+        ScaledBezier(bezierPath: .logo)
+            .stroke(lineWidth: 2)
+            .frame(width: 200, height: 200)
+        */
+        
+        // 如何创建基本动画
+        
+        /*
+        Button(action:{
+            //self.scale1 += 1
+            self.angle += 45
+            self.borderThickness += 1
+        }){
+            /*Text("Tap here")
+                .scaleEffect(scale1)
+                .animation(.linear)
+            */
+            // 3秒钟 慢慢的变大
+            /*
+            Text("Tap here")
+                .scaleEffect(scale1)
+                .animation(.linear(duration:3))
+            */
+            /*
+            Text("Tap here")
+                .scaleEffect(scale1)
+                .animation(.easeIn)
+            */
+            
+            /*
+            Text("Tap here")
+                .padding()
+                .border(Color.red, width: borderThickness)
+                .rotationEffect(.degrees(angle))
+                .animation(.easeIn)
+            */
+            
+        }*/
+        
+        // 如何为绑定值的变化制作动画
+        /*
+        VStack{
+            Toggle(isOn:$showingWelcome.animation(.spring())){
+                Text("Toggle label")
+            }
+            
+            if showingWelcome {
+                Text("Hello World!")
+            }
+        }
+        */
+        
+        // 如何创建一个明确的动画
+        
+        /*
+        Button(action:{
+            withAnimation(.linear(duration: 3)){
+                self.opacity -= 0.2
+            }
+        }){
+            Text("Tap here")
+                .padding()
+                .opacity(opacity)
+        }
+        */
+        
+        // 如何延迟动画
+        /*
+        Rectangle()
+            .fill(Color.red)
+            .frame(width: 200, height: 200)
+            .rotationEffect(.degrees(rotation))
+            .animation(Animation.easeInOut(duration: 3))
+            .onTapGesture{
+                self.rotation += 360
+            }
+        */
+        
+        
+        // 视图出现后如何立即开始动画
+        /*
+        Circle()
+            .scaleEffect(scalex)
+            .animateForever(autoreverses:true){
+                self.scalex = 0.5
+            }
+ 
+        */
+        
+        // 如何将多个动画应用于视图
+        
+        /*
+        Button("Tap Me"){
+            self.isEnabled11.toggle()
+        }
+        .foregroundColor(.white)
+        .frame(width: 200, height: 200)
+        .background(isEnabled11 ? Color.green : Color.red)
+        .animation(nil)
+        .clipShape(RoundedRectangle(cornerRadius: isEnabled11 ? 100 : 0))
+        .animation(.default)
+        
+        */
+ 
+        // 如何通过过渡添加和删除视图
+        /*
+        VStack{
+            Button(action: {
+                withAnimation{
+                    self.showDetails.toggle()
+                }
+            }){
+                Text("Tap to show details")
+            }
+            
+            if showDetails {
+                //Text("Details go here.")
+                 //   .transition(.move(edge: .bottom))
+                /*
+                Text("Details go here.")
+                    .transition(.slide)
+                */
+                
+                Text("Details go here.")
+                    .transition(.scale)
+                
+            }
+        }
+        */
+        
+        // 如何结合过渡
+        
+        /*
+         Text("Details go here.")
+            .transition(AnyTransition.opacity.combined(with: .slide))
+        */
+        
+        /*
+        Text("Details go here.")
+            .transition(.moveAndScale)
+        */
+        
+        // 如何创建非对称过渡
+        /*
+        Text("Details go here.")
+            .transition(.asymmetric(insertion: .move(edge: .leading), removal: .move(edge: .bottom)))
+        */
+        
+        // 如何创建自定义过渡
+        
+        /*
+        NavigationView{
+            ZStack{
+                Rectangle()
+                    .fill(Color.blue)
+                    .frame(width: 300, height: 300)
+                
+                if isShowingRed {
+                    Rectangle()
+                        .fill(Color.red)
+                        .frame(width: 300, height: 300)
+                        .transition(.iris)
+                        .zIndex(1)
+                }
+                
+            }
+            .navigationBarItems(trailing: Button("Switch"){
+                withAnimation(.easeInOut){
+                    self.isShowingRed.toggle()
+                }
+            })
+        }
+        */
+        
+        // 如何设置文字大小的动画
+        
+        Text("Hello, World!")
+            //.animatableFont(name: "Georgia", size: fontSize1)
+            .animatableSystemFont(size: fontSize1, weight: .bold, design:.default )
+            .onTapGesture{
+                withAnimation(Animation.spring(response: 0.5, dampingFraction: 0.5, blendDuration: 1).repeatForever()){
+                    self.fontSize1 = 144
+                }
+            }
     }
     
     
@@ -2131,6 +2547,30 @@ struct ContentView: View {
     }
 }
 
+extension View {
+    /*
+    func animatableFont(name:String, size:CGFloat) -> some View{
+        self.modifier(AnimatableCustomFontModifier(name: name, size: size))
+    }
+    */
+    
+    func animatableSystemFont(size: CGFloat, weight:Font.Weight = .regular, design:Font.Design = .default) -> some View {
+        self.modifier(AnimatableCustomFontModifier(size: size, weight: weight, design: design))
+    }
+    
+}
+
+extension AnyTransition {
+    static var moveAndScale: AnyTransition {
+        AnyTransition.move(edge: .bottom).combined(with: .scale)
+    }
+    
+    static var iris: AnyTransition {
+        .modifier(active: ClipShapeModifier(shape: ScaledCircle(animatableData: 0)), identity: ClipShapeModifier(shape: ScaledCircle(animatableData: 1)))
+    }
+    
+}
+
 
 #if canImport(UIKit)
 extension View {
@@ -2141,6 +2581,38 @@ extension View {
 
 
 #endif
+
+extension UIBezierPath {
+    static var logo: UIBezierPath {
+        let path = UIBezierPath()
+        path.move(to: CGPoint(x: 0.534, y:0.5816))
+        path.addCurve(to: CGPoint(x:0.187, y:0.088), controlPoint1: CGPoint(x:0.534, y:0.5816), controlPoint2: CGPoint(x:0.2529, y:0.4205))
+        path.addCurve(to: CGPoint(x: 0.9728, y: 0.8259), controlPoint1: CGPoint(x: 0.4922, y: 0.4949), controlPoint2: CGPoint(x: 1.0968, y: 0.4148))
+        path.addCurve(to: CGPoint(x: 0.0397, y: 0.5431), controlPoint1: CGPoint(x: 0.7118, y: 0.5248), controlPoint2: CGPoint(x: 0.3329, y: 0.7442))
+        path.addCurve(to: CGPoint(x: 0.6211, y: 0.0279), controlPoint1: CGPoint(x: 0.508, y: 1.1956), controlPoint2: CGPoint(x: 1.3042, y: 0.5345))
+        path.addCurve(to: CGPoint(x: 0.6904, y: 0.3615), controlPoint1: CGPoint(x: 0.7282, y: 0.2481), controlPoint2: CGPoint(x: 0.6904, y: 0.3615))
+        return path
+    }
+}
+
+extension View {
+    func animate(using animation: Animation = Animation.easeInOut(duration:1), _ action: @escaping() -> Void) -> some View{
+        return onAppear{
+            withAnimation(animation){
+                action()
+            }
+        }
+    }
+    
+    func animateForever(using animation: Animation = Animation.easeInOut(duration:1), autoreverses:Bool = false, _ action:@escaping() -> Void) -> some View{
+        let repeated = animation.repeatForever(autoreverses: autoreverses)
+        return onAppear{
+            withAnimation(repeated){
+                action()
+            }
+        }
+    }
+}
 
 
 struct ContentView_Previews: PreviewProvider {
