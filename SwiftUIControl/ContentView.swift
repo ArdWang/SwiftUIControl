@@ -312,6 +312,22 @@ struct ContentView: View {
     
     @State private var fontSize1: CGFloat = 32
     
+    // 如何创建和组合自定义视图
+    
+    let user = User1(name: "Paul Hudson", jobTitle: "Editor, Hacking with Swift", emailAddress: "278161009@qq.com", profilePicture: "paul-hudson")
+    
+    // 如何将视图存储为属性
+    
+    let title = Text("Paul Hudson")
+        .font(.largeTitle)
+    
+    let subtitle = Text("Author")
+        .foregroundColor(.secondary)
+    
+    // 如何为SwiftUI包装自定义UIView
+    
+    @State var text = "我的天空"
+    
     var body: some View {
 //        Text("This is an extremely long text string that will never fit even the widest of Phones")
 //            .font(.largeTitle)
@@ -2525,7 +2541,7 @@ struct ContentView: View {
         */
         
         // 如何设置文字大小的动画
-        
+        /*
         Text("Hello, World!")
             //.animatableFont(name: "Georgia", size: fontSize1)
             .animatableSystemFont(size: fontSize1, weight: .bold, design:.default )
@@ -2534,6 +2550,65 @@ struct ContentView: View {
                     self.fontSize1 = 144
                 }
             }
+ 
+            */
+        
+        // 如何创建和组合自定义视图
+        
+        //UserView(user: user)
+        
+        // 如何将文本视图组合在一起
+        /*
+        Text("SwiftUI")
+            .font(.largeTitle)
+            .foregroundColor(.red)
+        + Text("is")
+            .font(.headline)
+            .foregroundColor(.orange)
+        + Text("awesome")
+            .font(.footnote)
+            .foregroundColor(.blue)
+        */
+        
+        // 如何将视图存储为属性
+        /*
+        VStack{
+            title.foregroundColor(.red)
+            subtitle
+        }
+        */
+        
+        // 如何创建自定义修饰符
+        
+        /*
+        Text("Hello, SwiftUI")
+            .modifier(PrimaryLabel())
+        */
+        
+        // 如何为SwiftUI包装自定义UIView
+        
+        /*
+        TextView(text: $text)
+            .frame(minWidth: 0,  maxWidth: .infinity, minHeight: 0,  maxHeight: .infinity)
+        */
+        
+
+        // 如何将图像插入文本
+
+        /*
+        Text("Hello ") + Text(Image(systemName: "star")) + Text(" World!").foregroundColor(.red)
+        */
+        
+        /*
+        (Text("Hello ") + Text(Image(systemName: "star")) + Text(" World!"))
+            .foregroundColor(.blue)
+            .font(.largeTitle)
+        */
+        
+        Text("Hello ") + Text(Image(systemName: "star")) + Text(" World!")
+            .foregroundColor(.blue)
+            .font(.largeTitle)
+        
     }
     
     

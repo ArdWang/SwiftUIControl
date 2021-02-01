@@ -11,6 +11,13 @@
 		BC0E1A4025C28B1E00668779 /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0E1A3F25C28B1D00668779 /* Star.swift */; };
 		BC0E1A4325C2922C00668779 /* Checkerboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0E1A4225C2922C00668779 /* Checkerboard.swift */; };
 		BC0E1A4625C2954800668779 /* ScaledBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0E1A4525C2954800668779 /* ScaledBezier.swift */; };
+		BC24879425C77C900098EE45 /* User1.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC24879325C77C900098EE45 /* User1.swift */; };
+		BC24879725C77CE90098EE45 /* ProfilePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC24879625C77CE90098EE45 /* ProfilePicture.swift */; };
+		BC24879A25C77E1C0098EE45 /* EmailAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC24879925C77E1C0098EE45 /* EmailAddress.swift */; };
+		BC24879D25C77EA70098EE45 /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC24879C25C77EA70098EE45 /* UserDetails.swift */; };
+		BC2487A025C77F120098EE45 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC24879F25C77F120098EE45 /* UserView.swift */; };
+		BC2487A325C79B2C0098EE45 /* PrimaryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2487A225C79B2C0098EE45 /* PrimaryLabel.swift */; };
+		BC2487A625C79BF70098EE45 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2487A525C79BF70098EE45 /* TextView.swift */; };
 		BC4AF88B25C3E95F00E956A9 /* ScaledCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4AF88A25C3E95F00E956A9 /* ScaledCircle.swift */; };
 		BC4AF88E25C3EAB900E956A9 /* ClipShapeModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4AF88D25C3EAB900E956A9 /* ClipShapeModifier.swift */; };
 		BC4AF89125C3F7BB00E956A9 /* AnimatableCustomFontModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4AF89025C3F7BB00E956A9 /* AnimatableCustomFontModifier.swift */; };
@@ -48,6 +55,14 @@
 		BC0E1A3F25C28B1D00668779 /* Star.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
 		BC0E1A4225C2922C00668779 /* Checkerboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkerboard.swift; sourceTree = "<group>"; };
 		BC0E1A4525C2954800668779 /* ScaledBezier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaledBezier.swift; sourceTree = "<group>"; };
+		BC24879325C77C900098EE45 /* User1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User1.swift; sourceTree = "<group>"; };
+		BC24879625C77CE90098EE45 /* ProfilePicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePicture.swift; sourceTree = "<group>"; };
+		BC24879925C77E1C0098EE45 /* EmailAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailAddress.swift; sourceTree = "<group>"; };
+		BC24879C25C77EA70098EE45 /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
+		BC24879F25C77F120098EE45 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		BC2487A225C79B2C0098EE45 /* PrimaryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryLabel.swift; sourceTree = "<group>"; };
+		BC2487A525C79BF70098EE45 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		BC2487A825C79FF10098EE45 /* SwiftUIControl.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftUIControl.entitlements; sourceTree = "<group>"; };
 		BC4AF88A25C3E95F00E956A9 /* ScaledCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaledCircle.swift; sourceTree = "<group>"; };
 		BC4AF88D25C3EAB900E956A9 /* ClipShapeModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipShapeModifier.swift; sourceTree = "<group>"; };
 		BC4AF89025C3F7BB00E956A9 /* AnimatableCustomFontModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableCustomFontModifier.swift; sourceTree = "<group>"; };
@@ -112,6 +127,7 @@
 		BC4BB92325B6BC2200BDFC67 /* SwiftUIControl */ = {
 			isa = PBXGroup;
 			children = (
+				BC2487A825C79FF10098EE45 /* SwiftUIControl.entitlements */,
 				BC4BB92425B6BC2200BDFC67 /* SwiftUIControlApp.swift */,
 				BC4BB92625B6BC2200BDFC67 /* ContentView.swift */,
 				BC4BB92825B6BC2900BDFC67 /* Assets.xcassets */,
@@ -147,6 +163,13 @@
 				BC4AF88A25C3E95F00E956A9 /* ScaledCircle.swift */,
 				BC4AF88D25C3EAB900E956A9 /* ClipShapeModifier.swift */,
 				BC4AF89025C3F7BB00E956A9 /* AnimatableCustomFontModifier.swift */,
+				BC24879325C77C900098EE45 /* User1.swift */,
+				BC24879625C77CE90098EE45 /* ProfilePicture.swift */,
+				BC24879925C77E1C0098EE45 /* EmailAddress.swift */,
+				BC24879C25C77EA70098EE45 /* UserDetails.swift */,
+				BC24879F25C77F120098EE45 /* UserView.swift */,
+				BC2487A225C79B2C0098EE45 /* PrimaryLabel.swift */,
+				BC2487A525C79BF70098EE45 /* TextView.swift */,
 			);
 			path = SwiftUIControl;
 			sourceTree = "<group>";
@@ -231,19 +254,24 @@
 				BCDE7BC725BE4F0A007BBF8B /* AppDelegate.swift in Sources */,
 				BC6A70D025BA56D200393508 /* UserAuthentication.swift in Sources */,
 				BC0E1A4325C2922C00668779 /* Checkerboard.swift in Sources */,
+				BC2487A625C79BF70098EE45 /* TextView.swift in Sources */,
 				BCE8995225B7BC2100685A12 /* AdaptiveStack.swift in Sources */,
 				BC0E1A4625C2954800668779 /* ScaledBezier.swift in Sources */,
 				BC988AA025B959EA00825491 /* DetailView.swift in Sources */,
 				BC6A70DC25BAA10D00393508 /* ExampleRow.swift in Sources */,
 				BC4BB93525B6D0F800BDFC67 /* GameScene.swift in Sources */,
 				BCDE7BC125BE4539007BBF8B /* SettingsView.swift in Sources */,
+				BC24879425C77C900098EE45 /* User1.swift in Sources */,
 				BCCD966425BFC8BF00B391EE /* NewUserView.swift in Sources */,
+				BC2487A325C79B2C0098EE45 /* PrimaryLabel.swift in Sources */,
 				BCDE7BB825BE44F3007BBF8B /* HomeView.swift in Sources */,
 				BC0E1A4025C28B1E00668779 /* Star.swift in Sources */,
 				BCDE7BC425BE460F007BBF8B /* SwiftUITestApp.swift in Sources */,
 				BC4AF88B25C3E95F00E956A9 /* ScaledCircle.swift in Sources */,
 				BC0E1A3D25C286B300668779 /* SpiroSquare.swift in Sources */,
 				BCDE7BBB25BE4504007BBF8B /* AccountView.swift in Sources */,
+				BC24879A25C77E1C0098EE45 /* EmailAddress.swift in Sources */,
+				BC2487A025C77F120098EE45 /* UserView.swift in Sources */,
 				BCE8995525B7FF3700685A12 /* GridStack.swift in Sources */,
 				BCCD966125BFA96100B391EE /* RestaurantView.swift in Sources */,
 				BC6A70D925BA9BDD00393508 /* TaskRow.swift in Sources */,
@@ -251,9 +279,11 @@
 				BC6A70DF25BAA33600393508 /* User.swift in Sources */,
 				BC4BB92725B6BC2200BDFC67 /* ContentView.swift in Sources */,
 				BC6A70D325BA714700393508 /* RestaurantRow.swift in Sources */,
+				BC24879725C77CE90098EE45 /* ProfilePicture.swift in Sources */,
 				BCDE7BCA25BEA7C6007BBF8B /* FullScreenModalView.swift in Sources */,
 				BC6A70D625BA720300393508 /* Restaurant.swift in Sources */,
 				BCE8994F25B7B95C00685A12 /* Result.swift in Sources */,
+				BC24879D25C77EA70098EE45 /* UserDetails.swift in Sources */,
 				BCE8995825B804C100685A12 /* SampleRow.swift in Sources */,
 				BC4AF88E25C3EAB900E956A9 /* ClipShapeModifier.swift in Sources */,
 				BC4AF89125C3F7BB00E956A9 /* AnimatableCustomFontModifier.swift in Sources */,
@@ -387,6 +417,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftUIControl/SwiftUIControl.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIControl/Preview Content\"";
 				DEVELOPMENT_TEAM = 4B5F6ELE34;
@@ -399,6 +430,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rnd.SwiftUIControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -409,6 +441,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftUIControl/SwiftUIControl.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIControl/Preview Content\"";
 				DEVELOPMENT_TEAM = 4B5F6ELE34;
@@ -421,6 +454,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rnd.SwiftUIControl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

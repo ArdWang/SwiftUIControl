@@ -12,7 +12,7 @@ struct SwiftUIControlApp: App {
     
     var settings = UserSettings()
     
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+   // @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     var body: some Scene {
         WindowGroup {

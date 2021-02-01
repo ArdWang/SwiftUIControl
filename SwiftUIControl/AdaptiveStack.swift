@@ -25,7 +25,6 @@ struct AdaptiveStack<Content:View>: View {
     }
     
     
-    
     var body: some View {
         Group{
             if sizeClass == .compact {
